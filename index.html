@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavel Jodas - webdesign</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#hero"><img src="logo-PJ.png" alt="logo"></a>
+      </div>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#omne">O mně</a></li>
+        <li><a href="#tvorba-stranek">Tvorba stránek</a></li>
+        <li><a href="#cenik">Ceník</a></li>
+        <li><a href="#projekty">Projekty</a></li>
+        <li><a href="#kontakt">Kontaktní formulář</a></li>
+      </ul>
+       <div class="hamburger" id="hamburger" role="button" tabindex="0">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <a class="cta-nav" href="#kontakt">Kontaktuj mně</a>
+    </nav>
+
+ 
+  <script> //hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  });
+
+    function toggleMenu() {
+      navMenu.classList.toggle('menu-active');
+      hamburger.classList.toggle('open');
+    }
+   
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Zavření menu po kliknutí na položku menu
+    navMenu.querySelectorAll('li').forEach(item => {
+      item.addEventListener('click', () => {
+        if(navMenu.classList.contains('menu-active')) {
+          toggleMenu();
+        }
+      });
+    });
+
+  </script>
+
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <div id="text-typewrite" class="nadpis-hero"></div>
+      <p class="fadeIn-animace">Tvorba webů v Liberci a okolí</p>
+    </div>
+    <img class="hero-img" src="hero-img.jpg" alt="hero-photo" width="400px">
+
+  </section>
+  
+  <script> // animace psacího stroje
+    const text = "Funkční a responzivní web za férovou cenu";
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("text-typewrite").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 40);
+        }
+    }
+    typeWriter();
+  </script>
+
+  <section id="omne">
+    <h2>O mně</h2>
+    <p>Webové stránky tvořím s opravdovým nadšením a důrazem na detail. Webdesign je pro mě nejen zálibou, ale i způsobem, jak přiblížit představy klientů realitě. Ke každému projektu přistupuji individuálně a s osobním nasazením, jako by šlo o moji vlastní zakázku. <br><br>Klientům věnuji maximální pozornost, naslouchám jejich požadavkům a hledám řešení přesně na míru. Nejde mi o masovou produkci, ale o vzájemnou spokojenost a web, který bude skutečně sloužit svému účelu. <br><br>Nadpis „za férovou cenu“ zdůrazňuje, že nižší cena není na úkor kvality. Udržení dostupných cen je možné díky efektivnímu přístupu a omezení zbytečných nákladů, například vysokých poplatků za hosting nebo správu. Do každého projektu investuji čas i úsilí s cílem dosáhnout výsledku plně odpovídajícího požadavkům klientů. <br><br>Pokud máte zájem, rád poznám váš projekt a společně můžeme vytvořit řešení, které bude mít skutečný smysl.</p>
+  </section>
+
+  <section id="tvorba-stranek">
+    <h2>Tvorba stránek</h2>
+    <p class="text-pod-nadpis">Zaměřuji se především na jednodušší typy stránek - jednostránkové a vícestránkové weby pro především malé a střední podnikatele či podniky.</p>
+   
+    <div class="spoluprace-container">
+      <h3 class="sticky-header">Jak probíhá spolupráce</h3>
+      <div class="prubeh-spoluprace">
+        <div class="krok">
+          <div class="number">
+            <p>1</p>
+          </div>
+          <div class="krok-text">
+            <h4>Sjednání schůzky</h4>
+            <p>Termín a místo schůzky lze dohodnout podle individuálních potřeb. V  případě větší vzdálenosti je možné využít také online spojení. Během  schůzky se projednává základní podoba a vizuální styl webu – pozornost  je věnována barvám, klíčovým prvkům i struktuře stránek. Zároveň dochází k předání potřebných podkladů, například fotografií nebo loga, které  budou následně využity při tvorbě webových stránek.</p>
+          </div> 
+        </div>
+
+        <div class="krok">
+          <div class="number">
+            <p>2</p>
+          </div>
+          <div class="krok-text">
+            <h4>Tvorba úvodního návrhu webovky</h4>
+            <p>Po úspěšné schůzce začíná práce na návrhu základní struktury webu. Tento proces obvykle trvá 1–2 týdny. Jakmile je připraven první návrh, je  předán k nahlédnutí společně s cenovou nabídkou. Následně probíhá  konzultace detailů, připomínek a případných úprav, aby byl výsledný web  plně v souladu s požadavky.</p>
+          </div>
+        </div>
+
+        <div class="krok">
+            <div class="number">
+              <p>3</p>
+            </div>
+            <div class="krok-text">
+              <h4>Programování webu</h4>
+              <p>Jakmile jsou doladěny všechny designové detaily, následuje samotná fáze  programování webu. Tento proces obvykle trvá přibližně 2 týdny, přičemž  je kladen důraz na to, aby výsledná stránka co nejlépe odpovídala  zadaným požadavkům a představám.</p>
+            </div>
+        </div>
+
+        <div class="krok">
+            <div class="number">
+              <p>4</p>
+            </div>
+            <div class="krok-text">
+              <h4>Konzultace vytvořené stránky</h4>
+              <p>V této fázi je web testován na testovací doméně a následně jsou  dolaďovány případné nedostatky. Jakmile je výsledek odsouhlasen, zbývá  už jen poslední a nejdůležitější krok.</p>
+            </div>
+        </div>
+
+        <div class="krok">
+            <div class="number">
+              <p>5</p>
+            </div>
+            <div class="krok-text">
+              <h4>Umístění webové stránky na internet</h4>
+              <p>Zajištění domény a webhostingu patří k hlavním bodům závěrečného kroku.  Veškeré potřebné náležitosti jsou zajištěny tak, aby web bez problémů  fungoval a byl připraven k okamžitému spuštění.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </section>
+
+  <section id="cenik">
+    <h2>Ceník</h2>
+    <p>Cenová relace se může zásadně lišit v závislosti na obtížnosti daného projektu. Proto nejsou pevně stanoveny jednotlivé ceny, ale cenové rozmezí - výsledná cena je konečná, zahrnuje vlastní doménu a webhosting na 1 rok.</p>
+    <div class="cenik">
+      <div class="cenik-card">
+      <h3>Jednostránkový web</h3>
+      <ul>
+        <li><img src="tick.svg" alt="tick">1 stránka</li>
+        <li><img src="tick.svg" alt="tick">Základní animace</li>
+        <li><img src="tick.svg" alt="tick">Vlastní doména</li>
+        <li><img src="tick.svg" alt="tick">Základní copywriting</li>
+      </ul>
+      <p class="cena">5 000 - 8 000 Kč</p>
+      <a class="cta-cenik" onclick="setProdukt(1)" href="#kontakt">Mám zájem</a>
+    </div>
+    <div class="cenik-card">
+
+      <h3>Vícestránkový web</h3>
+      <ul>
+        <li><img src="tick.svg" alt="tick">2-6 stránek</li>
+        <li><img src="tick.svg" alt="tick">Základní animace</li>
+        <li><img src="tick.svg" alt="tick">Vlastní doména</li>
+        <li><img src="tick.svg" alt="tick">Základní copywriting</li>
+      </ul>
+      <p class="cena">od 10 000 Kč</p>
+      <a class="cta-cenik" onclick="setProdukt(2)" href="#kontakt">Mám zájem</a>
+
+    </div>
+    
+    <div class="cenik-card">
+    <h3>Vlastní nabídka</h3>
+      <ul>
+        <li><img src="tick.svg" alt="tick">Individuální požadavky</li>
+        <li><img src="tick.svg" alt="tick">Pokročilé animace</li>
+        <li><img src="tick.svg" alt="tick">Vlastní doména</li>
+        <li><img src="tick.svg" alt="tick">Základní copywriting</li>
+      </ul>
+      <p class="cena">Dohodou</p>
+      <a class="cta-cenik" onclick="setProdukt(3)" href="#kontakt">Mám zájem</a>
+    </div>
+    </div>
+  </section>
+
+  <section id="projekty">
+    <h2>Projekty</h2>
+    <p>Zde jsou zobrazeny již zhotovené projekty, nebo ty, na kterých se právě pracuje.</p>
+    <div class="projekt-card">
+      <a href="#projekty">
+      <img src="bullda_view.png" alt="bullda barbershop" width="330pxpx">
+      <h4>Bull'da barbershop</h4>
+      <p>Kadeřnictví / barbershop</p>
+      <p class="stav">V progresu</p>
+    </div></a>
+  </section> 
+
+  <section id="kontakt">
+    <h2>Kontaktní formulář</h2>
+
+  <form id="kontakt-form" action="https://formsubmit.co/jody.pavel@gmail.com" method="POST">
+    <label for="jmeno">Jména a příjmení</label>
+    <input type="text" id="jmeno" name="jmeno" required placeholder="Jan Novák">
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="jan.novak@email.cz">
+    
+    <label for="dropdown">Produkt</label>
+      <select id="dropdown" class="dropdown" name="vyber">
+        <option value="moznost1">Jednostránkový web</option>
+        <option value="moznost2">Vícestránkový web</option>
+        <option value="moznost3">Vlastní nabídka</option>
+       </select>
+    <label for="popis">Poznámka</label>
+    <textarea id="popis" name="popis" placeholder="Vlastním malé kadeřnictví u Liberece a potřebuji webovou stránlu, protože....." rows="10" cols="40"></textarea>
+    
+    <input type="submit" id="send-btn" value="Odeslat">
+</form>
+  </section>
+
+  <footer>
+    <div class="footer-info">
+      <img  width="100px" src="logo-PJ-white.png" alt="logo">
+      <h4>Tvorba webových stránek <br> za férovou cenu </h4>
+      <div class="row"><img width="30px" src="email-white.svg" alt=""><p>info@paveljodasweb.cz</p></div>
+    </div>
+    <div class="footer-links">
+        <a href="#omne">O mně</a></li>
+        <a href="#tvorba-stranek">Tvorba stránek</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#kontakt">Kontaktní formulář</a>
+    </div>
+      
+  </footer>
+      <div class="copy-big"><p>&copy; 2025 Pavel Jodas - webdesign. Všechna práva vyhrazena</p></div>
+      <div class="copy-small"><p>&copy; 2025 Pavel Jodas - webdesign<br> Všechna práva vyhrazena</p></div>
+
+      <script>//převolba produktu na základě zmáčnutého tlačítka
+          function setProdukt(volba) {
+            var select = document.getElementById('dropdown');
+            // Indexy v poli option začínají od 0
+            select.selectedIndex = volba - 1;
+          }
+      </script>
+</body>
+</html>

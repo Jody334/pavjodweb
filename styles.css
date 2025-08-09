@@ -1,0 +1,668 @@
+:root{
+    --lightblue:#30B4C5;
+    --darkblue:#020736;
+    --borderradius: 15px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+    width: auto;
+
+}
+body{
+    font-family: 'Lexend', sans-serif;
+
+}
+h1{
+    font-size: 65px;
+    padding: 10px 20px;
+    margin-left: 30px;
+}
+h2{
+    font-size: 32px;
+    padding: 25px;
+    text-align: center;
+        margin: 5px 30px;
+
+}
+h3{
+    font-size: 24px;
+    font-weight: 300;
+    padding: 15px;
+        margin: 5px 30px;
+
+}
+h4{
+    font-size: 22px;
+    font-weight: 400;
+}
+p{
+    font-weight: 300;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+}
+textarea{
+    resize: none;
+}
+section{
+    background-color: #ffff;
+    margin-bottom: 100px;
+    scroll-margin-top: 60px;
+    min-height: 500px;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*navbar*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    position: sticky;
+    top: 0%;
+    z-index: 20;
+    background-color: rgba(231, 245, 255, 0.918);
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+nav li{
+    cursor: pointer;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.logo img{
+    width: 80px;
+}
+.cta-nav{
+    background-color: var(--lightblue);
+    color: white;
+    border-radius: var(--borderradius);
+    padding: 10px 25px;
+}
+.close-btn{
+    display: none;
+    border: none;
+    font-size: 22px;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
+  .hamburger {
+    display: none;
+    width: 30px;
+    /* Výšku neomezujeme */
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px; /* přidaný gap */
+    cursor: pointer;
+    position: relative;
+  }
+
+  .bar {
+    height: 4px;
+    background: rgb(0, 0, 0);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+  transform: rotate(48deg) translate(2px, 5px);
+    }
+    .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    }
+ .hamburger.active .bar:nth-child(3) {
+  transform: rotate(-48deg) translate(6px, -8px);
+}
+
+  /* Fullscreen menu když je aktivní */
+  .menu-active {
+    position: fixed;
+    top: 60px; left: 0; right: 0; bottom: 0;
+    background: rgba(255 255 255 / 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    animation: fadeIn 0.5s ease forwards;
+
+  }
+
+  /* Styl pro ul v fullscreen módu */
+  .menu-active ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-active ul li {
+    cursor: pointer;
+  }
+
+
+/*------------------------------------------------------------------------------------------*/
+/*hero section*/
+.hero {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  height: 75vh;
+  overflow: hidden;
+  background-image: url(hero-bck.svg);
+  background-position: center;
+  background-size: cover;
+}
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 90vh;
+    margin: auto;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.hero p{
+    font-size: 35px;
+        margin: 5px 30px;
+
+}
+.hero-img{
+    width: 800px;
+    border-radius: var(--borderradius);
+    margin-right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  opacity: 0;
+  transform: translateY(40px);        /* výchozí stav – dole a neviditelný */
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 2s;
+}
+.nadpis-hero{
+    font-size: 64px;
+    margin: 5px 30px;
+}
+/*animace*/
+.fadeIn-animace {
+  opacity: 0;
+  transform: translateY(40px);        /* výchozí stav – dole a neviditelný */
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 1.8s;
+}
+
+/* Definice animace */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);      /* začne dole a průhledný */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);         /* skončí nahoře a plně viditelný */
+  }
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*o mně*/
+#omne{
+    text-align: left;
+}
+#omne h2{
+    text-align: center;
+}
+#omne p{
+    max-width: 100vh;
+    margin: auto;
+    padding: 5px 30px;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*Tvorba webstránek*/
+#tvorba-stranek{
+    text-align: center;
+    background: linear-gradient(to right bottom, var(--darkblue) 58%,#30B4C5);
+    color: rgb(255, 255, 255);
+}
+.text-pod-nadpis{
+    max-width: 80%;
+    margin: auto;
+}
+.spoluprace-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    top: 60px;
+    margin-top: 20px;
+    z-index: 2;
+    padding: 30px;
+}
+.sticky-header{
+    position: sticky;
+    top: 60px;
+    z-index: 2;
+    width: 300px;
+}
+
+.prubeh-spoluprace{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 70%;
+}
+.krok{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: left;
+    background: transparent;
+    padding: 20px;
+    border-radius: var(--borderradius);
+    margin: 0 100px;
+    max-width: 70%;
+}
+.krok-text h4{
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-underline-offset: 5px;
+    margin-bottom: 10px;
+
+}
+.krok-text p{
+    padding: 10px 0px;
+    margin-right: 20px;
+}
+.number p{
+    font-size: 30px;
+    padding: 10px 20px;
+    font-weight: 400;
+}
+.number{
+    border-radius: 50%;
+    background-color: #029aaf;
+    color: white;
+}
+/*------------------------------------------------------------------------------------------*/
+/*cenik*/
+
+#cenik p{
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: left;
+}
+.cenik{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 50px;
+}
+.cenik-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: white;
+    align-items: center;
+    border-radius: var(--borderradius);
+    background: linear-gradient(var(--darkblue) 55%,#5158B0);
+    width: 350px;
+    height: 345px;
+}
+.cenik-card ul{
+    list-style: none;
+}
+.cenik-card li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 10px;
+    font-weight: 350;
+}
+.cenik-card ul img{
+    width: 25px;
+}
+.cta-cenik{
+    border-radius: var(--borderradius);
+    background-color: var(--lightblue);
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.cena{
+    font-size: 24px;
+    padding: 15px;
+    font-weight: 500;
+}
+/*------------------------------------------------------------------------------------------*/
+/*projekty*/
+#projekty{
+    color: white;
+    padding: 20px;
+    background-image: url(projekty-back.svg);
+    background-size: cover;
+    background-position: center;
+}
+#projekty h2{
+    text-align: center;
+}
+#projekty h4{
+    text-align: center;
+    padding: 10px;
+}
+#projekty p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#projekty a{
+    color: rgb(0, 0, 0);
+}
+.projekt-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: var(--borderradius);
+    width: fit-content;
+    padding: 15px 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    background-color: white;
+}
+
+.projekt-card img{
+    border-radius: var(--borderradius);
+    padding: none;
+    width:350px;
+
+}
+
+.stav{
+    text-align: center;
+    color: rgba(230, 133, 6, 0.945);
+    font-weight: 400;
+}
+/*------------------------------------------------------------------------------------------*/
+/*kontakt*/
+#kontakt{
+    color: rgb(0, 0, 0);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:  0 auto;
+    gap: 10px;
+    max-width: 550px;
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: var(--borderradius);
+    padding: 20px;
+}
+form label{
+    text-align: left;
+}
+form textarea{
+    font-family: 'Lexend', sans-serif;
+}
+
+#jmeno, #prijmeni, #email, #popis{
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: var(--borderradius);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 350;
+    width: 300px;
+}
+
+.dropdown{
+    width: 350px;
+    padding: 10px 20px;
+    border-radius: var(--borderradius);
+    border: black solid 1px;
+    font-size: 20px;
+    background: transparent;
+
+}
+.popis{
+    height: 500px;
+}
+
+#send-btn{
+    border-radius: var(--borderradius);
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: var(--darkblue);
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+
+/*------------------------------------------------------------------------------------------*/
+/*footer*/
+footer{
+    background-color: var(--darkblue);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer h4{
+    font-size: 20px;
+}
+footer p{
+    padding: 3px;
+    font-size: 18px;
+}
+footer a{
+    color: white;
+}
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.copy-big, .copy-small{
+    background-color: #01041f;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+.copy-big p, .copy-small p{
+    font-size: 15px;
+}
+.copy-small{
+    display: none;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+/*optimalitace*/
+@media (max-width: 1575px) {
+  .hero-img{
+    width:550px;
+  }
+  .nadpis-hero{
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-img{
+    display: none;
+  }
+  .hero-text{
+    text-align: center;
+  }
+  .nadpis-hero{
+    font-size: 55px;
+  }
+  .spoluprace-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+  }
+  .sticky-header{
+    position: relative;
+    }
+   .prubeh-spoluprace{
+    width: 97%;
+   }
+}
+  /* Mobilní verze do 1200px */
+  @media (max-width: 1150px) {
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 100px;
+    }
+    nav ul {
+      display: none; /* skryj defaultní navbar */
+      flex-direction: column;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .cta-nav{
+        display: none;
+    }
+    .close-btn{
+        display: flex;
+    }
+  }
+
+  @media (max-width: 780px){
+    nav{
+        padding: 5px 40px;
+    }
+
+    .krok{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .krok-text{
+        text-align: left;
+        width: 45vh;
+    }
+   
+  }
+
+  @media (max-width: 650px) {
+   p{
+    font-size: 18px;
+   }
+   
+   h2{
+    font-size: 28px;
+   }
+   h3{
+    font-size: 24px;
+   }
+   h4{
+    font-size: 20px;
+   }
+    .nadpis-hero{
+    font-size: 45px;
+   }
+
+   .hero-text p{
+    font-size: 30px;
+   }
+   
+   form, input, textarea{
+    font-size: 18px;
+   }
+   form{
+    width: 320px;
+   }
+   footer p,a{
+    font-size: 15px;
+   }
+   footer h4{
+    font-size: 18px;
+   }
+   .copy-big, .copy-small{
+    font-size: 12px;
+   }
+  
+    }
+
+   @media (max-width: 450px){
+    .footer-info h4{
+        width: 70%;
+    }
+    .cenik-card{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+    }
+    .projekt-card img{
+        width: 250px;
+    }
+    .copy-big{
+        display: none;
+    }
+    .copy-small{
+        display: block;
+        text-align: center;
+    }
+    .footer-links{
+        width: 120px;
+        margin: auto;
+    }
+   
+  }
